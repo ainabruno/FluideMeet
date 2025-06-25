@@ -33,8 +33,10 @@ import {
   type ServiceBooking,
   type InsertServiceBooking,
 } from "@shared/schema";
-import { db } from "./db";
+import { getDb } from "./db";
 import { eq, desc, asc, and, or, like, count, sql } from "drizzle-orm";
+
+const db = getDb();
 
 export interface IStorage {
   // User operations (mandatory for Replit Auth)
